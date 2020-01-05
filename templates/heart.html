@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bmi.css') }}">
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+<form class="form-signin" action="" method="POST">
+    <input class="form-control" type="text" placeholder="Age" name="age" value="{{request.form.age}}">
+    <input class="form-control" type="number" placeholder="RHR" name="rhr" value="{{request.form.rhr}}">
+    <button class="btn btn-primary" type="submit" name="calc" value="res">Enter</button>
+</form>
+</div>
+{% if request.method == 'POST' %}
+{% set year = request.form['age'] |int %}
+{% set rr = request.form['rhr'] |int %}
+{% if request.form['calc'] == 'res' %}
+{% for i in inte %}
+{% set mhr = (220-year) %}
+{% set hrr = (mhr - rr) %}
+{% set r =  (hrr*i/100) + rr %}
+<div class="container">
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Intensity</th>
+      <th scope="col">Rate <img src="https://i.pinimg.com/originals/24/85/92/2485921b42ed8b532f5784d005fde2ec.gif" width="40" height="40" alt="heart"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{ i }}</th>
+      <td>{{ r }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+{% endfor %}
+{% endif %}
+{% endif %}
+
+
+ 
+{% endblock %}

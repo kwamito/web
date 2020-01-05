@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/guess.css') }}">
+{% endblock %}
+{% block content %}
+<form action="" method="POST">
+<button id="mid" class="btn btn-primary" name="pla" value="play" role="button" type="submit">Play</button>
+</form>
+{% if request.method == 'POST' %}
+{% if request.form['pla'] == 'play' %}
+<strong><p id="txt">This game is played by guessing the right number from a range</p></strong>
+{% set rn = range(1, 10) | random %}
+<div class="container">
+<form action="" method="POST">
+        <input class="form-control" type="number" placeholder="Guess" name="guess" value="{{request.form.guess}}">
+    <button class="btn btn-primary" type="submit" name="dd" value="check">Check</button>
+</form>
+{% set num = request.form['guess'] %}
+{{ rn }}
+{{ ran }}
+{% if request.form['dd'] == 'check' %}
+{% if num == ran %}
+<p>That's Nice Youve won</p>
+{{ ran }}
+{{ rn }}
+{% else %}
+<strong><p>Wrong</p></strong>
+{% endif %}
+{% endif %}
+{% endif %}
+{% endif %}
+{% endblock %}

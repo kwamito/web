@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}">
+{% endblock %}
+{% block content %}
+<div class="dog">Joke</div>
+<div class="container">
+
+
+    <div class="row">
+        {% if request.method == 'POST' %}
+        {% if request.form['it'] == 'its' %}
+        {% for i in prod %}
+        <div class="col" id="bink">
+            <div class="card" style="box-shadow: 34rem;" id="cc" style="width: 12rem;" id="cd">
+                <div class="card-body">
+                    <img class="card-img-top" src={{ i['image'] }}>
+                    <h4 class="card-title">{{ i['name'] }}</h4>
+                    <p class="card-text">{{ i['price'] }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="spinner"></div>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

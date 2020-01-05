@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bmi.css') }}">
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+<form class="form-signin" action="" method="POST">
+    <input class="form-control" type="number" placeholder="Weight" name="weight" value="{{request.form.weight}}">
+    <input class="form-control" type="number" placeholder="Height" name="height" value="{{request.form.height}}">
+    <button class="btn btn-primary" type="submit" name="calc" value="res">Enter</button>
+</form>
+</div>
+{% if request.form['calc'] == 'res' %}
+{% set w = request.form['weight'] |int %}
+{% set h = request.form['height'] |int %}
+{% set bmi = w/(h*h)*703 %}
+{% if bmi >= 25 %}
+{{ w }}
+<div class="container">
+<div class="progress">
+        <div class="progress-bar bg-danger" role="progressbar" style="width: {{ bmi }}%;" aria-valuenow={{ bmi }} aria-valuemin="0" aria-valuemax="100">{{ bmi }}</div>
+      </div>
+      <strong><p id="txt">Your BMI shows signs of over weight click the button below for medical advice</p></strong>
+      <a class="btn btn-outline-danger" id="but" href="#" role="button">Advice</a>
+</div>
+  {% endif %}
+  {% if bmi <= 18.5 %}
+  <div class="container">
+  <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: {{ bmi }}%;" aria-valuenow={{ bmi }} aria-valuemin="0" aria-valuemax="100">{{ bmi }}</div>
+      </div>
+      <strong><p id="txt">Your BMI is that of a healthy person click the button below to find more health tips</p></strong>
+      <a class="btn btn-outline-success" href="#" id="but" role="button">Tips</a>
+    </div>
+      {% endif %}
+{% endif %}
+{% endblock %}

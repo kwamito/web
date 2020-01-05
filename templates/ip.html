@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ip.css') }}">
+{% endblock %}
+
+{% block content %} 
+{% set num = [1,2,3,4] %}
+{% set colours = ['green', 'blue', 'red', 'orange','pink','yello','crimson','cornsilk', 'chartreuse','cornflowerblue' ] %}
+{% set name = 'll' %}
+{% set val = 'mon' %}
+<div class="container">
+<div class="row">
+    {% for n in num %}
+    {% for color in colours %}
+   
+            <form action="" method="POST"> <button type="submit" name="{{ name }}" value="{{ val }}"><div class="card" style="width: 10rem; height: 10rem; background-color: {{ color }};">
+<div class="col btn btn-default" style="background-color: {{ color }};"></div>
+</div>
+</button>
+</form>
+    {% endfor %}
+    {% endfor %}
+</div>
+</div>
+{% if request.method == 'POST' %}
+{% if request.form[name] == val %}
+{% set count = 2 %}
+{{ 'Wow we are know working' }}
+
+{% endif %}
+{% endif %}
+{% endblock %}

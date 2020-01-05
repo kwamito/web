@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/temp.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid" id="jum">
+        <div class="container">
+          <h1 class="display-4">Conversion</h1>
+          <p class="lead">Be able to convert to any temperature unit in just a few steps</p>
+        </div>
+      </div>
+<h3 id="txt">This is the temperature conversion  page<img src="https://previews.123rf.com/images/kyryloff/kyryloff1711/kyryloff171100052/92369118-thermometer-black-icon-with-fahrenheit-and-celsius-snowflake-and-sun.jpg" width="30" height="30"> </h3>
+<p id="txt">Choose your conversion type below</p>
+<div class="container">
+  <form action="" method="POST">
+   <button class="btn btn-primary btn-lg" name="ctf" value="ct" style="margin: 5rem;" role="button">Celcius to Fahrenheit</button>
+   <button class="btn btn-primary btn-lg" style="margin: 5rem;" role="button">Fahrenheit to celcius</button>
+   <button class="btn btn-primary btn-lg" style="margin: 5rem;" role="button">Celcius to Kelvin</button>
+   <button class="btn btn-primary btn-lg" style="margin: 5rem;" role="button">Kelvin to Fahrenheit</button>
+   <button class="btn btn-primary btn-lg" style="margin: 5rem;" role="button">Kelvin to Celcius</button>
+   <button class="btn btn-primary btn-lg" style="margin: 5rem;" role="button">Fahrenheit to kelvin</button>
+  </form>
+</div>
+{% if request.method == 'POST' %}\
+{% if request.form['ctf'] == 'ct' %}
+<div class="container" id="con">
+  <form action="" method="POST">
+    <input type="text" id="inp" name="ctfn" value="{{request.form.ctfn}}" placeholder="Celcius to Fahrenheit">
+    <button class="btn btn-primary" id="but" name="one" value="ono1" type="submit">Enter</button>
+  </form>
+</div>
+{% if request.form['one'] == 'ono1' %}
+<strong><p>{{ val }}</p></strong>
+{% endif %}
+{% endif %}
+{% endif %}
+
+{% endblock %}
