@@ -1,0 +1,29 @@
+/* word.css */
+form.fr {
+    margin-left: 42%;
+    box-shadow: none;
+}
+.in {
+    border: 2px solid crimson;
+    border-radius: 5px;
+    padding: 9px;
+    max-width: 120px;
+    min-width: 100px;
+}
+
+#b1 {
+    background-color: darkred;
+}
+#b1:hover {
+    background-color: yellow;
+}
+#hw {
+    width: 5rem;
+    height: 1px;
+    background-color: yellow;
+}
+#hw:hover {
+    width: 30rem;
+    height: 1px;
+    background-color: tomato;
+}

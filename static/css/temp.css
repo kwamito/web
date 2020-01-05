@@ -1,0 +1,27 @@
+/* temp.css */
+body {
+    background-image: url('http://hdqwalls.com/wallpapers/blue-sky-clouds-digital-art-sg.jpg');
+    background-repeat: no-repeat; 
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+#txt {
+    text-align: center;
+    color: cornsilk;
+}
+#jum {
+    background-image: url('https://images.hdqwalls.com/wallpapers/bthumb/cool-blue-temperature-sunset-2g.jpg');
+    background-repeat: no-repeat; 
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+#but {
+    background-color: red;
+    border: 3px solid red;
+    box-shadow: springgreen;
+}

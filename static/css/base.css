@@ -1,0 +1,9 @@
+/* base.css */
+
+#ic {
+    size: 23rem;
+}
+footer {
+    margin: 50rem;
+    position: sticky;
+}

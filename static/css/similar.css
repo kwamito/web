@@ -1,0 +1,27 @@
+/* similar.css */
+#searchfor {
+    background-color: whitesmoke;
+}
+#searchfor:hover {
+    background-color: grey;
+}
+#but {
+    background-color: blue;
+}
+#but:hover {
+    opacity: 8;
+}
+#tab {
+    border: none;
+    border-radius: 10px;
+}
+.spinner {
+    border: 5px solid whitesmoke;
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 2px;
+    background-color: tomato;
+}

@@ -1,0 +1,30 @@
+/* pro.css */
+
+.prime {
+    background-color: blueviolet;
+    border-radius: 10rem;
+    height: 50px;
+    width: 100px;
+    border: 1px solid black;
+}
+
+
+#ss {
+    color: whitesmoke;
+}
+#ss :hover {
+    color: coral;
+}
+.di {
+    border: 2px solid red;
+    border-radius: 5px;
+    float: left;
+}
+.di:hover {
+    border-color: coral;
+}
+@media screen and (min-width: 480px) {
+    body {
+      background-color: lightgreen;
+    }
+  }

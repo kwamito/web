@@ -1,0 +1,62 @@
+/* homepage.css */
+#but {
+    color: navy;
+}
+#imd {
+    max-width: 100%;
+    height: 5;
+}
+#txt {
+    color: yellow;
+}
+#np {
+    color: tomato;
+}
+#rw1 {
+    background-color: tomato;
+    margin: 1rem;
+    width: 100%;
+}
+#rw2 {
+    background-color: firebrick;
+    margin: 1rem;
+    width: 100%;
+}
+#rw3 {
+    background-color: orangered;
+    margin: 1rem;
+    width: 100%;
+}
+#rw4 {
+    background-color: orchid;
+    margin: 1rem;
+    width: 100%;
+}
+#rw5 {
+    background-color: peru;
+    margin: 1rem;
+    width: 100%;
+}
+#rw6 {
+    background-color: royalblue;
+    margin: 1rem;
+    width: 100%;
+}
+.card-title {
+    text-align: center;
+}
+.card-text {
+    text-align: center;
+}
+#all {
+    align-content: center;
+}
+.spinner {
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-top: 4px green;
+}
